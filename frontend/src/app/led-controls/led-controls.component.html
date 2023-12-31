@@ -1,0 +1,30 @@
+<main class="p-3">
+    <h2>Basic Controls</h2>
+    <div class="grid p-3">
+        <div class="input-group" role="group">
+            <button class="btn btn-primary" (click)="set_led_color('#ffffff')" [disabled]="is_led_on">Turn on</button>
+            <button class="btn btn-primary" (click)="set_led_color('#000000')" [disabled]="!is_led_on">Turn off</button>
+        </div>
+        <div class="input-group" role="group">
+            <ngx-colors class="input-group-text" ngx-colors-trigger [(ngModel)]="color" (input)="set_led_color(color!)"></ngx-colors>
+            <button class="btn btn-primary" (click)="set_led_color(color!)">Set Color</button>
+        </div>
+        <div>
+            <label for="brightness" class="form-label">Brightness: {{ brightness / 2.55 | number:'1.0-0' }}%</label>
+            <input type="range" class="form-range" id="brightness" min="0" max="255" step="1" [(ngModel)]="brightness" (ngModelChange)="set_led_brightness(brightness)">
+        </div>
+    </div>
+
+    <h2>Patterns</h2>
+    <div class="grid p-3">
+        <button class="btn btn-primary" (click)="set_led_pattern('rainbow')">Rainbow</button>
+        <button class="btn btn-primary" (click)="set_led_pattern('rainbow_cycle')">Rainbow Cycle</button>
+        <div class="input-group" role="group">
+            <ngx-colors class="input-group-text" ngx-colors-trigger [(ngModel)]="theater_chase_color" (input)="set_led_pattern('theater_chase', theater_chase_color!)"></ngx-colors>
+            <button class="btn btn-primary" (click)="set_led_pattern('theater_chase', theater_chase_color)">Theater Chase</button>
+        </div>
+        <button class="btn btn-primary" (click)="set_led_pattern('theater_chase_rainbow')">Theater Chase Rainbow</button>
+        
+    </div>
+
+</main>
