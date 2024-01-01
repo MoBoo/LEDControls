@@ -1,0 +1,43 @@
+POST http://192.168.178.22:8000/pattern
+Content-Type: application/json
+
+{"pattern": "solid", "color": "#123456"}
+
+###
+
+POST http://192.168.178.22:8000/pattern
+Content-Type: application/json
+
+{"pattern": "rainbow"}
+
+
+###
+
+POST http://192.168.178.22:8000/pattern
+Content-Type: application/json
+
+{"pattern": "rainbow_cycle"}
+
+
+###
+
+POST http://192.168.178.22:8000/pattern
+Content-Type: application/json
+
+{"pattern": "theater_chase", "color": "#123456"}
+
+
+###
+
+POST http://192.168.178.22:8000/pattern
+Content-Type: application/json
+
+{"pattern": "theater_chase_rainbow"}
+
+
+###
+
+POST http://192.168.178.22:8000/brightness
+Content-Type: application/json
+
+{"value": 255}
